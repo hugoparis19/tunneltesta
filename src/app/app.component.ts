@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from "app/hero";
 
 @Component({
   selector: 'yuc-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'yuc works!';
+  title = 'Tour of Heroes';
+
+
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
 }
