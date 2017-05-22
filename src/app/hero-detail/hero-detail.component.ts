@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from 'app/hero';
 import { HeroService } from 'app/hero.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'yuc-hero-detail',
@@ -29,5 +29,8 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
+  save(): void {
+    this.heroService.update(this.hero)
+      .then(() => this.goBack());
+  }
 }
