@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeroesComponent } from "app/heroes/heroes.component";
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { HeroDetailComponent } from "app/hero-detail/hero-detail.component";
+import { HeroSearchComponent } from "app/hero-search/hero-search.component";
+import { HeroFormComponent } from "app/hero-form/hero-form.component";
 
 const routes: Routes = [
   {
@@ -19,9 +21,12 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-  path: 'detail/:id',
-  component: HeroDetailComponent
-}
+    path: 'detail/:id',
+    component: HeroDetailComponent
+  }, {
+    path: 'heroe-form',
+    component: HeroFormComponent
+  }
 ];
 
 @NgModule({

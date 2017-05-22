@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Hero Form</h1>
+  <form (ngSubmit)="onSubmit()" class="example-form" #heroForm="ngForm">
+
+    <!--<div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+    </div>
+
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select class="form-control" id="power" required [(ngModel)]="model.power" name="power" #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+      <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+        Power is required
+      </div>
+    </div>-->
+
+    <md-input-container class="example-full-width" cellspacing="0">
+      <input mdInput placeholder="name" [(ngModel)]="model.name" name="name" #name="ngModel" required>
+      <md-error>nooooo</md-error>
+      <md-error *ngIf="model.name.valid">
+          This field is required
+        </md-error>
+    </md-input-container>
+
+    <md-input-container class="example-full-width" cellspacing="0">
+      <input mdInput placeholder="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo" #name="ngModel">
+    </md-input-container>
+
+
+    <md-select placeholder="powers" [(ngModel)]="model.power" name="power"> 
+      <md-option *ngFor="let pow of powers" [value]="pow" >{{pow}}</md-option>
+    </md-select>
+
+    <!--<select class="form-control" id="power" required>
+      <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+    </select> -->
+    <!--<div class="form-group">
+      <label for="name">Name</label> 
+      <input type="text" class="form-control" id="name" required>
+    </div>
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" class="form-control" id="alterEgo">
+    </div>-->
+    <!--<button type="submit" class="btn btn-success">Submit</button>-->
+    
+    <button md-raised-button color="primary" type="submit">
+    Submit <md-icon>done</md-icon>
+    </button>
+  </form>
+</div>
