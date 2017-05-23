@@ -13,6 +13,10 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from 'app/in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { HeroFormTemplateDrivenComponent } from './hero-form-template-driven/hero-form-template-driven.component';
+import { HeroFormReactiveComponent } from './hero-form-reactive/hero-form-reactive.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ForbiddenValidatorDirective } from './forbidden-validator.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     HeroesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    HeroFormTemplateDrivenComponent,
+    HeroFormReactiveComponent,
+    ForbiddenValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,8 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     MaterialModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,8 @@ import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { HeroDetailComponent } from "app/hero-detail/hero-detail.component";
 import { HeroSearchComponent } from "app/hero-search/hero-search.component";
 import { HeroFormComponent } from "app/hero-form/hero-form.component";
+import { HeroFormTemplateDrivenComponent } from "app/hero-form-template-driven/hero-form-template-driven.component";
+import { HeroFormReactiveComponent } from "app/hero-form-reactive/hero-form-reactive.component";
 
 const routes: Routes = [
   {
@@ -26,6 +28,12 @@ const routes: Routes = [
   }, {
     path: 'heroe-form',
     component: HeroFormComponent
+  }, {
+    path: 'heroe-form-template-driven',
+    component: HeroFormTemplateDrivenComponent
+  }, {
+    path: 'heroe-form-reactive',
+    component: HeroFormReactiveComponent
   }
 ];
 
