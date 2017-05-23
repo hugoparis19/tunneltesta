@@ -30,9 +30,13 @@
   <div class="form-group">
     <label class="center-block">Name:
       <input class="form-control" formControlName="name" #spy>
+      <small *ngIf="!heroForm.get('name').valid" 
+                  class="text-danger">
+                 Required.
+                </small>
     </label>
   </div>
-  <div formGroupName="address" class="well well-lg">
+  <!--<div formGroupName="address" class="well well-lg">
     <h4>Secret Lair</h4>
     <div class="form-group">
       <label class="center-block">Street:
@@ -56,7 +60,7 @@
       <input class="form-control" formControlName="zip">
     </label>
     </div>
-  </div>
+  </div>-->
 
    <div formArrayName="secretLairs" class="well well-lg">
     <div *ngFor="let address of secretLairs.controls; let i=index" [formGroupName]="i" >
@@ -85,7 +89,8 @@
             <input class="form-control" formControlName="zip">
           </label>
         </div>
-        <div class="form-group" *ngIf="displayGang(i)">
+        
+        <div class="form-group" *ngIf="heroForm.controls['secretLairs'].controls[i].value.state == 'CA'">
           <label class="center-block">Gang:
             <input class="form-control" formControlName="gang">
           </label>
